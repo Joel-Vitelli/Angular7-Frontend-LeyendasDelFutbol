@@ -1,0 +1,15 @@
+
+<hr>
+<div class="row animated fadeIn low">
+  <div class="col-md-4" style="text-align: center">
+    <img [src]="jugador.imagen" class="img-fluid" [alt]="jugador.nombre">
+    <br><br> <a [routerLink]="['/jugadores']" class="btn btn-outline-danger btn-block">Regresar</a> </div>
+  <div class="col-md-8">
+    <h3 style="color: crimson">{{jugador.nombre}}</h3>
+    <hr>
+    <p><b>Posición:</b> {{jugador.posicion}}</p>
+    <p><b>Fecha de nacimiento:</b> {{jugador.fechaNacimiento | date : 'dd/MM/y'}}</p>
+    <p><b>Nacionalidad:</b> {{jugador.nacionalidad}}</p>
+    <p><b>Biografia:</b> {{jugador.biografia}}</p>    
+  </div>
+</div>

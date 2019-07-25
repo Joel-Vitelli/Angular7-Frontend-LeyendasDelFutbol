@@ -1,0 +1,30 @@
+
+<h1>Leyendas del futbol</h1>
+<mat-form-field>
+  <mat-label>Seleccione una posición</mat-label>
+  <mat-select [(value)]="selected" >
+    <mat-option (click)="getPosiciones(selected)" value="Delantero">Delantero</mat-option>
+    <mat-option (click)="getPosiciones(selected)" value="Mediocampista">Mediocampista</mat-option>
+    <mat-option (click)="getPosiciones(selected)" value="Defensor">Defensor</mat-option>    
+  </mat-select>
+</mat-form-field>
+
+<p>Ha seleccionado: {{selected}}</p>
+
+
+<hr>
+<div class="card-columns">
+  <div class="card animated fadeIn fast" *ngFor="let jugadorAux of jugadores; let i = index">
+    <!--<div *ngIf="jugadorAux.posicion == selected">-->
+      <img class="card-img-top" src="{{jugadorAux.imagen}}" [alt]="jugadorAux">
+      <div class="card-body">
+        <h5 class="card-title">{{jugadorAux.nombre}}</h5>
+        <p class="card-text">Posición: {{jugadorAux.posicion}}</p>
+        <p class="card-text">
+          <small class="text-muted">Nacionalidad: {{jugadorAux.nacionalidad}}</small>
+        </p>
+        <button (click)="verJugador(jugadorAux.id)" type="button" class="btn btn-outline-primary btn-block">Ver Mas</button>
+      </div>
+    <!--</div>-->
+  </div>
+</div>
